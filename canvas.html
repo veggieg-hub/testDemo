@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid #ccc;
+    }
+
+  </style>
+</head>
+
+<body>
+  <canvas width="500px" height="500px" id="cvs">xxxxxxxxx</canvas>
+  <script>
+    var canvas = document.getElementById("cvs")
+    console.log(canvas);
+
+    var ctx = canvas.getContext("2d")
+    console.log(ctx);
+
+    ctx.fillStyle = 'green';
+
+    ctx.fillRect(100, 100, 100, 100)
+
+    ctx.strokeRect(200, 200, 100, 100)
+    console.log(ctx);
+
+  </script>
+</body>
+
+</html>

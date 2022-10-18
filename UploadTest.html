@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input1" type="file">
+    <img  id="img1" src="" alt="">
+    <script>
+        input1.onchange=()=>{
+            let render = new FileReader()
+            let uploadFile = input1.files
+            console.log(uploadFile);
+            render.readAsDataURL(uploadFile[0])
+            console.log("Render",render);
+            render.onload = ()=>{
+                img1.src=render.result
+            }
+        }
+    </script>
+</body>
+</html>

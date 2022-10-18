@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //call：第一个参数为this指向的对象
+    //      第二个起的参数为函数的传参
+    //      return要有返回值
+    Function.prototype.mycall = function () {
+      let arr = Array.prototype.slice.call(arguments)
+      const t = arr.shift()
+      const self = this
+      t.fn = self
+      const res = t.fn(...arr)
+      delete t.fn
+      return res
+    }
+
+    function fn(a, b) {
+      console.log("a", a);
+      console.log("b", b);
+      console.log("this", this);
+      return "hello"
+    }
+    const res = fn.mycall({
+      x: 10
+    }, 20, 30)
+    console.log(res);
+
+  </script>
+</body>
+
+</html>

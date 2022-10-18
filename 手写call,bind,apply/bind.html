@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    Function.prototype.myBind = function () {
+      const arr = Array.prototype.slice.call(arguments)
+      const t = arr[0]
+      const arg = arr.slice(1)
+      console.log(arg);
+      t.fn = this;
+      const res = t.fn(...arg)
+      delete t.fn
+      return function () {
+        return res
+      }
+    }
+
+
+    let obj = {
+      name: "坤坤"
+    }
+
+    let myobj = {
+      "columnNames": {
+        real_fortune_index: 123
+      },
+      "quarters": {},
+      "referIds": {},
+      "validQuarter": "",
+      "page": "",
+      "size": "",
+      "sortField": "",
+      "sort": ""
+    }
+
+
+    const fn = function (a, b, c) {
+      console.log("a", a);
+      console.log("b", b);
+      console.log("c", c);
+      console.log("this", this);
+      return "返回成功！"
+    }
+    let res = fn.myBind(obj, 100, 200, 300)()
+    console.log("res", res);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    @media print {
+      .noprint {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+	<button type="button" id="printBtn">打印</button>
+	<iframe frameborder="0" src="./printlframe.html" id="printFrame" style="width: 0;height: 0;"></iframe>
+	<!-- <script type="text/javascript" src="./js/jquery-3.1.1.js"></script> -->
+	<script type="text/javascript">
+        const print22 = document.querySelector("#printFrame")
+		printBtn.onclick=()=>{
+            console.log(123);
+            console.log(print);
+            print22.setAttribute("src","./printlframe.html")
+        }
+	</script>
+</body>
+
+
+</html>

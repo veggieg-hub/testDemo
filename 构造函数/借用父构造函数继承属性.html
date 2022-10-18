@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    function Father(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    Father.prototype.money = function () {
+      console.log("money");
+    }
+
+
+    function Son(n, a, score) {
+      Father.call(this, n, a)
+      this.score = score
+    }
+
+
+
+    Son.prototype = new Father()
+    Son.prototype.constructor = Son
+
+    Son.prototype.exam = function () {
+      console.log("exam");
+    }
+    var son = new Son("cxk", 18, 100)
+    console.log("Father.prototype", Father.prototype);
+
+    console.log(son);
+
+  </script>
+</body>
+
+</html>

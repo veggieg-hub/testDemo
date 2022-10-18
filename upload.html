@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+
+<body>
+  <form>
+    <input type="file" id="file1" name="file1" />
+
+    <input type="submit" />
+    <img id="img1" src="" />
+  </form>
+
+  <script>
+    //选择图片后，预览图片
+
+    document.getElementById('file1').onchange = function () {
+      //1 创建文件读取对象  
+      var reader = new FileReader();
+      //文件存储在file表单元素的files属性中，它是一个数组
+      //没有返回值，但是读取完毕后，将读取结果存储在对象的result中
+      var fil = document.getElementById('fdile1').files;
+      console.log('fil', fil);
+      reader.readAsDataURL(fil[0]);
+      console.log('fil[0]', fil[0]);
+
+      //当读取成功后触发
+      reader.onload = function () {
+        console.log('reader.result', reader.result);
+        document.getElementById('img1').src = reader.result;
+      };
+    };
+
+  </script>
+</body>
+
+</html>

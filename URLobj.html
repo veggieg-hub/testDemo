@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <input id="file1" type="file" />
+  <img id="img1" alt="xx" />
+  <img id="img2" alt="xx" />
+  <script>
+    document.querySelector("#file1").onchange = function (e) {
+      const file = e.target.files[0];
+      const URL1 = URL.createObjectURL(file)
+      console.log(URL1);
+      img1.src = URL1
+      URL.revokeObjectURL(URL1)
+      const URL2 = URL.createObjectURL(file)
+      img2.src = URL2
+    }
+
+  </script>
+</body>
+
+</html>

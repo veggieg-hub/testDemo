@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person() {
+        Person.prototype.name = 'cxk';
+        Person.prototype.age = 18;
+        Person.prototype.todoing = function () {
+          console.log('xxxxx');
+        };
+      }
+      const xx = new Person();
+      console.log(xx);
+      console.log(xx.name);
+    </script>
+  </body>
+</html>

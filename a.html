@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+    <a id="a1" href="aaa1.png" >123213</a>
+    <button id="btn">132</button>
+    <input type="file" id="fff"  >
+    <script>
+      btn.onclick = () => {
+        
+        a1.setAttribute('download', 'xxxx.pptx')
+        a1.click();
+      };
+      fff.ondrag=(e)=>{
+        console.log(13213);
+      }
+    </script>
+  </body>
+</html>

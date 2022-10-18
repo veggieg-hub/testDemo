@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <input type="text" id="myInput" oninput="debounce(inputIng,100)">
+  <script>
+    //防抖
+    const input = document.getElementById("myInput")
+
+  
+
+    function debounce(fn, waitTime) {
+      let time;
+      return function (...arguments) {
+        clearInterval(time)
+        time = setTimeout(() => {
+          fn.apply(this, arguments)
+        }, waitTime)
+      }
+    }
+    // let time;
+    // function myDebounce(e) {
+    //   console.log(132);
+    //     clearTimeout(time)
+    //     time = setTimeout(() => {
+    //       console.log("防抖");
+    //     }, 1000)
+    // }
+
+  </script>
+</body>
+
+</html>

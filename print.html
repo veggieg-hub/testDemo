@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    @media print {
+      .noprint {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!--startprint-->
+  <div class="content">
+    <p class="noprint">隐藏的内容</p>
+    <h1 style="display: none">我可以</h1>
+    <button id="btn">点击打印</button>
+
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+    <img src="./doc.webp" alt="">
+
+    <img src="./doc.webp" alt="">
+
+
+
+
+
+
+  </div>
+  <!--endprint-->
+  <h1>不需要打印的内容</h1>
+  <script>
+    function toPrint() {
+      const bdhtml = window.document.body.innerHTML
+      const sprnstr = "<!--startprint-->"
+      const eprnstr = "<!--endprint-->"
+      let prnhtml = bdhtml.substr(bdhtml.indexOf(sprnstr) + 17)
+      prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr))
+      // let printWindow = window.open("print_window", "_blank")
+      // printWindow.document.write(prnhtml)
+      // printWindow.document.close()
+      // printWindow.onload = () => {
+      //   printWindow.print()
+      //   printWindow.close()
+      // }
+
+      window.document.body.innerHTML = prnhtml
+      window.print()
+    }
+    btn.onclick = () => {
+      console.log(123);
+      toPrint()
+      window.location.reload()
+    }
+
+  </script>
+</body>
+
+</html>
